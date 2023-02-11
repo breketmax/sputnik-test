@@ -10,7 +10,7 @@ export const router = createBrowserRouter([
     path: '/',
     children: [
       {
-        path: 'weather',
+        path: '/',
         element: <Weather />,
       },
       {

@@ -1,5 +1,14 @@
+:root {
+  --black: #797d7f;
+  --white: #ffffff;
+  --primary: #1976d2;
+  --dark-blue: #17202a;
+  --light-blue: #1c2833;
+  --red: #e53935;
+  --font-family: 'Nunito', sans-serif;
+}
 body {
-  height: 100px;
-
-  display: subgrid;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

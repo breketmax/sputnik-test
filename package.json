@@ -24,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint --fix --ext js,ts,tsx src"
   },
   "eslintConfig": {
     "extends": [
@@ -61,6 +62,6 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,html,css}": "prettier --write",
-    "src/**/*.{ts,tsx}": "eslint --fix"
+    "src/**/*.{ts,tsx,js}": "eslint --fix"
   }
 }

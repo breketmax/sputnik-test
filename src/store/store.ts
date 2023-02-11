@@ -1,17 +1,17 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import cityReducer from './reducers/CitySlice'
-import weatherReducer from './reducers/WeatherSlice'
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import cityReducer from './reducers/CitySlice';
+import weatherReducer from './reducers/WeatherSlice';
 
 const rootReducer = combineReducers({
   cityReducer,
-  weatherReducer
-})
+  weatherReducer,
+});
 
 export const store = configureStore({
   reducer: {
-    rootReducer
-  }
-})
+    rootReducer,
+  },
+});
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

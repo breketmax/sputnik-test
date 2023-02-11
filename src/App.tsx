@@ -1,6 +1,6 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Header from './components/Header/Header'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Header from './components/Header/Header';
 
 const App: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const App: React.FC = () => {
 
       <Outlet />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

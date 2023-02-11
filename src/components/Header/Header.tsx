@@ -1,5 +1,5 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Header: React.FC = () => {
   return (
@@ -7,7 +7,7 @@ const Header: React.FC = () => {
       <NavLink to="weather">Weather</NavLink>
       <NavLink to="gallery">Gallery</NavLink>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

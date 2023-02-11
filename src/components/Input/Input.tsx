@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 interface IInput {
   placeholder: string
@@ -7,13 +7,13 @@ interface IInput {
   value: string
 }
 
-const Input: React.FC<IInput> = ({ onChange, placeholder, title, value }) => {
+const Input: React.FC<IInput> = ({ onChange, placeholder, title, value, }) => {
   return (
     <div className="input-wrapper">
       {title !== null && <span className="input-title">{title}</span>}
       <input type="text" onChange={onChange} value={value} />
     </div>
-  )
-}
+  );
+};
 
-export default Input
+export default Input;

@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { IWeather } from '../../types/IWeather';
+import { Day, type IWeather, Month } from '../../types/IWeather';
 import { fetchWeather } from './ActionCreator';
 
 const initialState: IWeather = {
@@ -40,6 +40,13 @@ const initialState: IWeather = {
   isWeatherLoading: false,
   isWeatherError: '',
   isWeatherFullfield: false,
+  time: {
+    day: '',
+    hours: 0,
+    minutes: 0,
+    month: '',
+    number: 0,
+  },
 };
 
 const weatherSlice = createSlice({
@@ -48,6 +55,14 @@ const weatherSlice = createSlice({
   reducers: {
     setCityName (state, action: PayloadAction<string>) {
       state.name = action.payload;
+    },
+    setTime (state) {
+      const date = new Date();
+      state.time.month = Month[date.getMonth()];
+      state.time.day = Day[date.getDay()];
+      state.time.hours = date.getHours();
+      state.time.minutes = date.getMinutes();
+      state.time.number = date.getDate();
     },
   },
   extraReducers: (builder) => {
@@ -78,7 +93,7 @@ const weatherSlice = createSlice({
       }
     );
     builder.addCase(fetchWeather.rejected, (state, action) => {
-      state = JSON.parse(JSON.stringify(initialState));
+      // state = JSON.parse(JSON.stringify(initialState));
       state.isWeatherLoading = false;
       state.isWeatherFullfield = false;
       state.isWeatherError = action.payload ?? '';
@@ -87,4 +102,4 @@ const weatherSlice = createSlice({
 });
 
 export default weatherSlice.reducer;
-export const { setCityName, } = weatherSlice.actions;
+export const { setCityName, setTime, } = weatherSlice.actions;

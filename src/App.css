@@ -1,14 +1,81 @@
 :root {
-  --black: #797d7f;
+  --black: #17202a;
+  --gray: #797d7f;
   --white: #ffffff;
   --primary: #1976d2;
   --dark-blue: #17202a;
   --light-blue: #1c2833;
-  --red: #e53935;
+  --light-red: #f5b7b1;
+  --dark-red: #cb4335;
   --font-family: 'Nunito', sans-serif;
 }
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-family);
+  padding-bottom: 70px;
+}
+a {
+  text-decoration: none;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1320px;
+  }
+}
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+input {
+  outline: none;
+}
+.App {
+  color: var(--black);
+}
+/* @media (min-width: 1200px){
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+      max-width: 1140px;
+  }
+}
+@media (min-width: 992px){
+  .container, .container-lg, .container-md, .container-sm {
+      max-width: 960px;
+  }
+}
+@media (min-width: 768px){
+  .container, .container-md, .container-sm {
+      max-width: 720px;
+  }
+}
+@media (min-width: 576px){
+  .container, .container-sm {
+      max-width: 540px;
+  }
+} */
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
 }

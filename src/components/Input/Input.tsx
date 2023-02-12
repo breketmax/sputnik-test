@@ -11,7 +11,12 @@ const Input: React.FC<IInput> = ({ onChange, placeholder, title, value, }) => {
   return (
     <div className="input-wrapper">
       {title !== null && <span className="input-title">{title}</span>}
-      <input type="text" onChange={onChange} value={value} />
+      <input
+        type="text"
+        onChange={onChange}
+        value={value}
+        placeholder={placeholder}
+      />
     </div>
   );
 };

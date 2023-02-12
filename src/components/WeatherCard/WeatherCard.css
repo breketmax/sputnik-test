@@ -1,0 +1,77 @@
+.weather-card {
+  display: flex;
+  border-radius: 45px;
+  box-shadow: 0px 9px 23px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 80px 80px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.weather-card .loading {
+  left: 25%;
+}
+.weather-card .error {
+  width: 50%;
+}
+.weather-card .time-block {
+  margin: 0 auto;
+}
+.weather-card .city-name {
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 87px;
+}
+.weather-card .city-name svg {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+.weather-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.weather-row .temperature {
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 101px;
+  margin-top: 40px;
+  text-align: center;
+}
+.weather-row .temperature span {
+  font-weight: 500;
+  font-size: 32px;
+  display: block;
+  line-height: 44px;
+}
+.weather-row .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather-row .main {
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 60px;
+}
+.weather-row .additional-info .info-item {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 44px;
+  color: var(--gray);
+}
+.time-block {
+  text-align: center;
+}
+.time-block .time {
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 100px;
+}
+.time-block .date {
+  font-weight: 500;
+  font-size: 40px;
+}

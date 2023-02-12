@@ -21,7 +21,7 @@ string,
     return responce.data;
   } catch (error: any) {
     return thunkAPI.rejectWithValue(
-      'Please check the correctness of city name'
+      'Please check the correctness of city name.'
     );
   }
 });

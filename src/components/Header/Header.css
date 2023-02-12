@@ -1,0 +1,25 @@
+.page-header {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-auto-flow: row;
+  padding: 40px 0;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 55px;
+  column-gap: 70px;
+  align-items: center;
+}
+.page-header img {
+  width: 200px;
+}
+.page-header a {
+  color: var(--black);
+  transition: 0.2s;
+  height: fit-content;
+}
+.page-header a:hover {
+  color: var(--primary);
+}
+.page-header a.active {
+  color: var(--primary);
+}

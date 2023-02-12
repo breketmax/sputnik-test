@@ -41,7 +41,9 @@ const WeatherCard: React.FC = () => {
               <span>{weather[0].main}</span>
             </div>
             <div className="additional-info">
-              <p className="info-item">Feels like {main.feels_like}°</p>
+              <p className="info-item">
+                Feels like {Math.trunc(main.feels_like)}°
+              </p>
               <p className="info-item">Wind {wind.speed}</p>
               <p className="info-item">Pressure {main.pressure}</p>
             </div>
@@ -54,7 +56,7 @@ const WeatherCard: React.FC = () => {
           {time.minutes < 10 ? `0${time.minutes}` : time.minutes}
         </p>
         <p className="date">
-          {time.day} {time.month} {time.number}
+          {time.day} &nbsp; {time.month} {time.number}
         </p>
       </div>
     </div>

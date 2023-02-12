@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import weatherReducer from './reducers/WeatherSlice';
+import APODReducer from './reducers/APODSlice';
 
 const rootReducer = combineReducers({
   weatherReducer,
+  APODReducer,
 });
 
 export const store = configureStore({

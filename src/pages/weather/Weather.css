@@ -10,7 +10,9 @@
   align-items: center;
   width: fit-content;
 }
-
+.App.night .weather-page .enter-city-block {
+  border-color: var(--white);
+}
 .weather-page button svg {
   width: 40px;
   height: 40px;
@@ -21,7 +23,10 @@
   border: none;
   font-weight: 500;
   font-size: 36px;
+  background-color: transparent;
+  font-family: var(--font-family);
 }
+
 .weather-page input::placeholder {
   font-weight: 500;
   font-size: 36px;

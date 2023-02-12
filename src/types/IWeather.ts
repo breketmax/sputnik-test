@@ -16,6 +16,7 @@ export interface IWeather {
   isWeatherError: string
   isWeatherFullfield: boolean
   time: ITime
+  isNight: boolean
 }
 
 export interface ICoord {

@@ -1,7 +1,8 @@
 :root {
+  --night: #212121;
   --black: #17202a;
   --gray: #797d7f;
-  --white: #ffffff;
+  --white: #fafafa;
   --primary: #1976d2;
   --dark-blue: #17202a;
   --light-blue: #1c2833;
@@ -14,7 +15,6 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-family);
-  padding-bottom: 70px;
 }
 a {
   text-decoration: none;
@@ -23,16 +23,15 @@ p {
   margin: 0;
   padding: 0;
 }
-@media (min-width: 1400px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl,
-  .container-xxl {
-    max-width: 1320px;
-  }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding: 0;
+  margin: 0;
 }
+
 button {
   border: none;
   background-color: transparent;
@@ -45,6 +44,27 @@ input {
 }
 .App {
   color: var(--black);
+  padding-bottom: 70px;
+}
+.App.night {
+  color: var(--white);
+  background-color: var(--night);
+}
+.App.night svg path {
+  fill: var(--white);
+}
+.App.night input {
+  color: var(--white);
+}
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1320px;
+  }
 }
 /* @media (min-width: 1200px){
   .container, .container-lg, .container-md, .container-sm, .container-xl {

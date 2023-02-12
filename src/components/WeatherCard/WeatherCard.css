@@ -1,7 +1,7 @@
 .weather-card {
   display: flex;
   border-radius: 45px;
-  box-shadow: 0px 9px 23px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   width: 100%;
   box-sizing: border-box;
   padding: 80px 80px;
@@ -9,6 +9,7 @@
   justify-content: space-between;
   position: relative;
 }
+
 .weather-card .loading {
   left: 25%;
 }
@@ -62,6 +63,9 @@
   font-size: 32px;
   line-height: 44px;
   color: var(--gray);
+}
+.App.css .weather-row .additional-info .info-item {
+  color: #e0e0e0;
 }
 .time-block {
   text-align: center;

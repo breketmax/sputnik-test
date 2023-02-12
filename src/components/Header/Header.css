@@ -12,14 +12,24 @@
 .page-header img {
   width: 200px;
 }
-.page-header a {
+
+.App .page-header a {
   color: var(--black);
   transition: 0.2s;
   height: fit-content;
 }
-.page-header a:hover {
+.App .page-header a:hover {
   color: var(--primary);
 }
-.page-header a.active {
+.App .page-header a.active {
+  color: var(--primary);
+}
+.App.night .page-header a {
+  color: var(--white);
+}
+.App.night .page-header a:hover {
+  color: var(--primary);
+}
+.App.night .page-header a.active {
   color: var(--primary);
 }

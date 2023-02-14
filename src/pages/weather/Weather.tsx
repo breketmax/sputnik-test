@@ -4,7 +4,7 @@ import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
 import WeatherCard from '../../components/WeatherCard/WeatherCard';
 import { useAppDispatch } from '../../hooks/redux';
-import { fetchAPOD, fetchWeather } from '../../store/reducers/ActionCreator';
+import { fetchWeather } from '../../store/reducers/ActionCreator';
 import { setTime } from '../../store/reducers/WeatherSlice';
 import { ReactComponent as Arrow } from './arrow.svg';
 import './Weather.css';
@@ -20,7 +20,6 @@ const Weather: React.FC = () => {
   };
   useEffect(() => {
     dispatch(setTime());
-    void dispatch(fetchAPOD(''));
     const updateTime = setInterval(() => {
       dispatch(setTime());
     }, 60000);

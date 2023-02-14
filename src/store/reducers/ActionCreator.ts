@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { type IAPOD } from '../../types/IAPOD';
+import { type IRandomPhoto, type ICollection } from '../../types/ICollection';
 import { type IWeather } from '../../types/IWeather';
 
 export const fetchWeather = createAsyncThunk<
@@ -44,5 +45,50 @@ string,
     return responce.data;
   } catch (error: any) {
     return thunkAPI.rejectWithValue('Something wrong with space.');
+  }
+});
+
+export const fetchCollections = createAsyncThunk<
+ICollection[],
+number,
+{ rejectValue: string }
+>('fetchColletions', async (id, thunkAPI) => {
+  try {
+    const responce = await axios.get<ICollection[]>(
+      `https://api.unsplash.com/collections/${id}/photos`,
+      {
+        params: {
+          client_id: 'VtJtk8SzbBBaD6rHZz-P-MpMiNGAqXaodyhkPKPfkJg',
+          per_page: '20',
+        },
+      }
+    );
+    return responce.data;
+  } catch (error: any) {
+    return thunkAPI.rejectWithValue(
+      "Couldn't find Collection, please try another id."
+    );
+  }
+});
+
+export const fetchRandomPhoto = createAsyncThunk<
+IRandomPhoto,
+null,
+{ rejectValue: string }
+>('fetchColletions', async (_, thunkAPI) => {
+  try {
+    const responce = await axios.get<IRandomPhoto>(
+      'https://api.unsplash.com/photos/random',
+      {
+        params: {
+          client_id: 'VtJtk8SzbBBaD6rHZz-P-MpMiNGAqXaodyhkPKPfkJg',
+        },
+      }
+    );
+    return responce.data;
+  } catch (error: any) {
+    return thunkAPI.rejectWithValue(
+      'Something happend with random photo, please try again later.'
+    );
   }
 });

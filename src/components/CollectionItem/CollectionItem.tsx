@@ -14,13 +14,13 @@ const CollectionItem: React.FC<ICollection> = ({
       <div className="collection-img-wrapper">
         <img
           alt={
-            altDescription !== null ? altDescription : 'Just beautiful image'
+            altDescription !== null ? altDescription : 'Just a beautiful image'
           }
           src={urls.regular}
         />
       </div>
       <div className="collection-text">
-        <h3>{description !== null ? description : 'Just beautiful title'}</h3>
+        <h3>{description !== null ? description : 'Just a beautiful title'}</h3>
         <a href={user.portfolio_url} target="_blank" rel="noreferrer">
           {user.username}
         </a>

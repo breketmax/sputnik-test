@@ -52,7 +52,7 @@ export const fetchCollections = createAsyncThunk<
 ICollection[],
 number,
 { rejectValue: string }
->('fetchColletions', async (id, thunkAPI) => {
+>('fetchCollections', async (id, thunkAPI) => {
   try {
     const responce = await axios.get<ICollection[]>(
       `https://api.unsplash.com/collections/${id}/photos`,
@@ -75,7 +75,7 @@ export const fetchRandomPhoto = createAsyncThunk<
 IRandomPhoto,
 null,
 { rejectValue: string }
->('fetchColletions', async (_, thunkAPI) => {
+>('fetchRndPhoto', async (_, thunkAPI) => {
   try {
     const responce = await axios.get<IRandomPhoto>(
       'https://api.unsplash.com/photos/random',

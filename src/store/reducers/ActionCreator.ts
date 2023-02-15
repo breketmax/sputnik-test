@@ -59,14 +59,14 @@ number,
       {
         params: {
           client_id: 'VtJtk8SzbBBaD6rHZz-P-MpMiNGAqXaodyhkPKPfkJg',
-          per_page: '20',
+          per_page: 20,
         },
       }
     );
     return responce.data;
   } catch (error: any) {
     return thunkAPI.rejectWithValue(
-      "Couldn't find Collection, please try another id."
+      "Couldn't find сollection, please try another id."
     );
   }
 });

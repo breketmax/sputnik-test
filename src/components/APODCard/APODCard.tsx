@@ -1,5 +1,6 @@
-import React from 'react';
-import { useAppSelector } from '../../hooks/redux';
+import React, { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { fetchAPOD } from '../../store/reducers/ActionCreator';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
 import './APODCard.css';
@@ -14,6 +15,12 @@ const APODCard: React.FC = () => {
     isAPODError,
     isAPODLoading,
   } = useAppSelector((state) => state.rootReducer.APODReducer);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    if (title === '') {
+      void dispatch(fetchAPOD(''));
+    }
+  }, [ title, ]);
   return (
     <div className="apod-card">
       {isAPODError !== '' && <Error>{isAPODError}</Error>}

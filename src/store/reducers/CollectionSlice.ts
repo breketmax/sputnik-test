@@ -3,14 +3,14 @@ import { fetchCollections } from './ActionCreator';
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 interface ICollectionSlice {
-  collection: ICollection[]
+  collection: ICollection[][]
   isCollectionLoading: boolean
   isCollectionrError: string
   isCollectionFullfield: boolean
 }
 
 const initialState: ICollectionSlice = {
-  collection: [],
+  collection: [ [], [], [], ],
   isCollectionLoading: false,
   isCollectionrError: '',
   isCollectionFullfield: false,
@@ -29,7 +29,10 @@ const CollectionSlice = createSlice({
     builder.addCase(
       fetchCollections.fulfilled,
       (state, action: PayloadAction<ICollection[]>) => {
-        state.collection = action.payload;
+        state.collection = [ [], [], [], ];
+        action.payload.forEach((item, index) => {
+          state.collection[index % 3].push(item);
+        });
         state.isCollectionLoading = false;
         state.isCollectionrError = '';
         state.isCollectionFullfield = true;

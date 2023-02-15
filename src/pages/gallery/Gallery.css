@@ -1,0 +1,45 @@
+.gallery-block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.gallery-col {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.gallery-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 70px;
+}
+.gallery-page .enter-id-block {
+  display: flex;
+  border-bottom: 3px solid var(--black);
+  align-items: center;
+  width: fit-content;
+}
+.App.night .gallery-page .enter-id-block {
+  border-color: var(--white);
+}
+.gallery-page button svg {
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+}
+.gallery-page input {
+  padding: 10px 20px;
+  border: none;
+  font-weight: 500;
+  font-size: 36px;
+  background-color: transparent;
+  font-family: var(--font-family);
+}
+
+.gallery-page input::placeholder {
+  font-weight: 500;
+  font-size: 36px;
+  color: #bababa;
+}

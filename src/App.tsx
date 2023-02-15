@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Header from './components/Header/Header';
 import './App.css';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
-import { fetchAPOD } from './store/reducers/ActionCreator';
+import { setTime } from './store/reducers/WeatherSlice';
 
 const App: React.FC = () => {
   const { isNight, } = useAppSelector(
@@ -11,8 +11,13 @@ const App: React.FC = () => {
   );
   const dispatch = useAppDispatch();
   useEffect(() => {
-    //  useEffect for state that doesnt change ever
-    void dispatch(fetchAPOD(''));
+    dispatch(setTime());
+    const updateTime = setInterval(() => {
+      dispatch(setTime());
+    }, 60000);
+    return () => {
+      clearInterval(updateTime);
+    };
   }, []);
   return (
     <div className={isNight ? 'App night' : 'App'}>

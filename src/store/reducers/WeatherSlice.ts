@@ -62,7 +62,7 @@ const weatherSlice = createSlice({
       state.time.month = Month[date.getMonth()];
       state.time.day = Day[date.getDay()];
       state.time.hours = date.getHours();
-      if (date.getHours() >= 23 || date.getHours() < 9) {
+      if (date.getHours() >= 22 || date.getHours() < 9) {
         state.isNight = true;
       }
       state.time.minutes = date.getMinutes();
